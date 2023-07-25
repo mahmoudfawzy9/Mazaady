@@ -6,5 +6,6 @@
 * Auction Details, Exchange and Return Policies are covered.
 * In my case I used Classification: CLOTHING, SHOES , BAGS, subCategory: Clothes Abaya including Size, BrandType, Location and MainImage
 * Multipart directory for the product Image, video
+* Manual Testing helped me understand the business before starting up the automation test framework.
 * To achieve 100% test coverage, More business classifications study is needed and I faced minor issues.
 * Get redirected to: https://staging.mazaady.com/login and start the test Journey : )

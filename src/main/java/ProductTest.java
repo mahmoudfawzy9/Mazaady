@@ -41,8 +41,8 @@ public class ProductTest {
         Assert.assertTrue(driver.getTitle().contains("Mazaady"));
     }
 
-//    @AfterClass
-//    public void tearDown() {
-//        driver.quit();
-//    }
+   @AfterClass
+   public void tearDown() {
+       driver.quit();
+   }
 }

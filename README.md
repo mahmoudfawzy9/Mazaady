@@ -11,3 +11,4 @@
 * Get redirected to: https://staging.mazaady.com/login and start the test Journey : )
 * Start it by running the ProductTest.java Test class
 * Uploading Main Image requires putting An Image named Image.java at the User Folder to work correctly.
+![Image](https://github.com/mahmoudfawzy9/Mazaady/assets/47506233/26880cb9-1a75-474b-bbb4-23b85634e6ab)

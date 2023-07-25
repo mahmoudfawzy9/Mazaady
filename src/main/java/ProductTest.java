@@ -14,7 +14,7 @@ public class ProductTest {
 
     @BeforeClass
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "D:\\Mazaady\\driver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", Configuration.getChromeDriverPath());
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-popup-blocking");
         driver = new ChromeDriver(options);

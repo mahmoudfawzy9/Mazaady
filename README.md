@@ -10,4 +10,4 @@
 * To achieve 100% test coverage, More business classifications study is needed and I faced minor issues.
 * Get redirected to: https://staging.mazaady.com/login and start the test Journey : )
 * Start it by running the ProductTest.java Test class
-* Uploading MainImage requires putting An Image named Image.java at the User Folder to work correctly.
+* Uploading Main Image requires putting An Image named Image.java at the User Folder to work correctly.

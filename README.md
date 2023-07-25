@@ -9,3 +9,4 @@
 * Manual Testing helped me understand the business before establishing the automation test framework.
 * To achieve 100% test coverage, More business classifications study is needed and I faced minor issues.
 * Get redirected to: https://staging.mazaady.com/login and start the test Journey : )
+* Start it by running the ProductTest.java Test class

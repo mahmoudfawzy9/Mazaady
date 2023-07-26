@@ -15,7 +15,7 @@ import java.awt.event.KeyEvent;
 import java.util.concurrent.TimeUnit;
 
 public class ProductPage {
-    private WebDriver driver = new ChromeDriver();
+    private WebDriver driver;
 
     private Actions actions;
 

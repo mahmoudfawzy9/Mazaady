@@ -72,7 +72,7 @@ public class ProductPage {
     @FindBy(xpath = "//input[@placeholder='Select Condition']")
     private WebElement condition;
 
-    @FindBy(css = "input[aria-autocomplete='list'][aria-labelledby='vs13__combobox'][aria-controls='vs13__listbox'][type='search'][autocomplete='off'][class='vs__search']")
+    @FindBy(xpath = "//*[@id=\"vs15__combobox\"]/div[1]/input")
     private WebElement countryMade;
 
     @FindBy(name = "415")

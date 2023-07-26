@@ -115,25 +115,22 @@ public class ProductPage {
     public void addProduct(String title, String category, String startPrice, String buyNowPrice, String estimatePrice) throws InterruptedException, AWTException {
 
         //dismiss the pop up that appears after login
-        WebDriverWait waitOne = new WebDriverWait(driver, 10);
-        waitOne.until(ExpectedConditions.visibilityOfElementLocated(By.className("btn-secondary"))).click();
+        Wait<WebDriver> wait = new FluentWait<>(driver).withTimeout(10, TimeUnit.SECONDS);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("btn-secondary"))).click();
 
         // Find the element to hover over
         // Get the dropdown menu element
         WebElement dropdownMenu = driver.findElement(By.className("dropdown"));
 
         // Wait until the dropdown menu is visible
-        Wait<WebDriver> waitTwo = new FluentWait<>(driver).withTimeout(10, TimeUnit.SECONDS);
-        waitTwo.until(ExpectedConditions.visibilityOf(dropdownMenu));
+        wait.until(ExpectedConditions.visibilityOf(dropdownMenu));
 
         // Create an Actions object and move the mouse to the element
         actions = new Actions(driver);
         actions.moveToElement(dropdownMenu).perform();
 
-//        WebElement addProduct = driver.findElement(By.xpath("//a[contains(text(),'Add Product')]"));
-
-        Wait<WebDriver> waitThree = new FluentWait<>(driver).withTimeout(10, TimeUnit.SECONDS);
-        waitThree.until(ExpectedConditions.visibilityOf(addProductButton));
+        // Wait until the AddProduct is appeared
+        wait.until(ExpectedConditions.visibilityOf(addProductButton));
         actions.moveToElement(addProductButton).click().build().perform();
 
         stepOneButton.click();

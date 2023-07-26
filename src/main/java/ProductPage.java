@@ -29,14 +29,16 @@ public class ProductPage {
     @FindBy(xpath = "//form//button[@type='button']")
     private WebElement stepOneButton;
 
-    @FindBy(xpath =  "//*[@id=\"step-2\"]/span/div[2]/div[13]/div/button[2]")
+    @FindBy(xpath =  "//button[contains(text(), 'Next Step')]")
     private WebElement stepTwoButton;
-
     @FindBy(xpath ="//button[contains(@class,'btn-buy') and contains(text(), 'Next Step')]")
     private WebElement stepThreeButton;
 
     @FindBy(xpath = "//button[@class='close'][@data-dismiss='modal']")
     private WebElement closeButton;
+
+    @FindBy(xpath = "//*[@id=\"step-2\"]/span/div[2]/div[1]/div[4]/span/div/div[1]/div/label")
+    private WebElement auctionTypeBidding;
 
     @FindBy(name = "title")
     private WebElement titleInput;
@@ -144,6 +146,10 @@ public class ProductPage {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         stepOneButton.click();
+        driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"step-2\"]/span/div[2]/div[1]/div[4]/span/div/div[1]/div/label")));
+
+        auctionTypeBidding.click();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         titleInput.click();
@@ -204,7 +210,7 @@ public class ProductPage {
 
         state.click();
         state.sendKeys("Hope Town\n");
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 
         city.click();
         city.sendKeys("Hope Town\n");
@@ -234,6 +240,7 @@ public class ProductPage {
         // Locate the label element using its 'data-v-6ff5a0de' attribute
         // Click on the element to open the file dialog
         mainImageLabel.click();
+        driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 
         // Wait for the file dialog to appear
         // Simulate key presses to navigate to the file after dialog box is opened
@@ -249,8 +256,8 @@ public class ProductPage {
         robot.delay(1000); // Wait for the file dialog to catch up
         robot.keyPress(KeyEvent.VK_ENTER);
         robot.keyRelease(KeyEvent.VK_ENTER);
-        
-        driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+
+        driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 
         // TODO Add the productsImage function should be the same as the mainImageUpload but different webElement
 

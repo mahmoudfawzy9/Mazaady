@@ -93,13 +93,14 @@ public class ProductPage {
 
     @FindBy(id = "tinymce_description_ifr")
     private  WebElement auctionDetails;
+    
     @FindBy(id =  "tinymce_policy_ifr")
     private WebElement policyAndExchangeDetails;
 
     @FindBy(xpath = "//*[@id=\"step-2\"]/span/div[2]/div[10]/div/div/div[1]/div/div[3]/label")
     private  WebElement mainImageLabel;
 
-    @FindBy(xpath = "//*[@id=\"vs8__combobox\"]")
+    @FindBy(xpath ="//*[@id=\"vs8__combobox\"]/div[1]/input")
     private WebElement currencyInput;
 
     @FindBy(xpath ="//input[@placeholder='Starting Bid Value']")

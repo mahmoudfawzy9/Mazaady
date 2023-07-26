@@ -23,16 +23,17 @@ public class ProductPage {
 
     @FindBy(xpath = "//*[@id=\"step-1\"]/div/div[1]/div[2]/div/label")
     private WebElement auctionType;
+    
     @FindBy(xpath = "//*[@id=\"step-1\"]/div/div[2]/div[3]/div/label")
     private WebElement auctionPlatform;
 
     @FindBy(xpath = "//form//button[@type='button']")
     private WebElement stepOneButton;
 
-    @FindBy(xpath = "//form//button[@type='button' and contains(text(), 'Next Step') and contains(@class, 'btn-buy']")
+    @FindBy(xpath = "//*[@id=\"step-2\"]/span/div[2]/div[13]/div/button[2]")
     private WebElement stepTwoButton;
     
-    @FindBy(xpath ="//form//button[contains(@class,'btn-buy') and contains(text(), 'Next Step')]")
+    @FindBy(xpath ="//*[@id=\"step-3\"]/span/div/div[7]/div/button[2]")
     private WebElement stepThreeButton;
 
     @FindBy(xpath = "//button[@class='close'][@data-dismiss='modal']")

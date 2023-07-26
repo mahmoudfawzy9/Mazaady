@@ -29,8 +29,9 @@ public class ProductPage {
     @FindBy(xpath = "//form//button[@type='button']")
     private WebElement stepOneButton;
 
-    @FindBy(xpath =  "//form//button[@type='button')]")
+    @FindBy(xpath = "//form//button[@type='button' and contains(text(), 'Next Step') and contains(@class, 'btn-buy']")
     private WebElement stepTwoButton;
+    
     @FindBy(xpath ="//form//button[contains(@class,'btn-buy') and contains(text(), 'Next Step')]")
     private WebElement stepThreeButton;
 

@@ -23,19 +23,17 @@ public class ProductPage {
 
     @FindBy(xpath = "//*[@id=\"step-1\"]/div/div[1]/div[2]/div/label")
     private WebElement auctionType;
-    
     @FindBy(xpath = "//*[@id=\"step-1\"]/div/div[2]/div[3]/div/label")
     private WebElement auctionPlatform;
 
     @FindBy(xpath = "//form//button[@type='button']")
     private WebElement stepOneButton;
 
+
     @FindBy(xpath = "//*[@id=\"step-2\"]/span/div[2]/div[13]/div/button[2]")
     private WebElement stepTwoButton;
-    
     @FindBy(xpath ="//*[@id=\"step-3\"]/span/div/div[7]/div/button[2]")
     private WebElement stepThreeButton;
-
     @FindBy(xpath = "//button[@class='close'][@data-dismiss='modal']")
     private WebElement closeButton;
 
@@ -94,7 +92,6 @@ public class ProductPage {
 
     @FindBy(id = "tinymce_description_ifr")
     private  WebElement auctionDetails;
-    
     @FindBy(id =  "tinymce_policy_ifr")
     private WebElement policyAndExchangeDetails;
 
@@ -258,11 +255,12 @@ public class ProductPage {
         robot.delay(1000); // Wait for the file dialog to catch up
         robot.keyRelease(KeyEvent.VK_CONTROL);
         robot.keyPress(KeyEvent.VK_ENTER);
-        robot.keyRelease(KeyEvent.VK_ENTER);
+        robot.delay(1000); // Wait for the file dialog to catch up
 
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(500, TimeUnit.SECONDS);
 
         // TODO Add the productsImage function should be the same as the mainImageUpload but different webElement
+
 
         stepTwoButton.click();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

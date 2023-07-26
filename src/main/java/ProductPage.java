@@ -2,7 +2,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -21,6 +20,11 @@ public class ProductPage {
 
     @FindBy(xpath = "//a[contains(text(),'Add Product')]")
     private WebElement addProductButton;
+
+    @FindBy(xpath = "//*[@id=\"step-1\"]/div/div[1]/div[2]/div/label")
+    private WebElement auctionType;
+    @FindBy(xpath = "//*[@id=\"step-1\"]/div/div[2]/div[3]/div/label")
+    private WebElement auctionPlatform;
 
     @FindBy(xpath = "//form//button[@type='button']")
     private WebElement stepOneButton;
@@ -133,6 +137,12 @@ public class ProductPage {
         wait.until(ExpectedConditions.visibilityOf(addProductButton));
         actions.moveToElement(addProductButton).click().build().perform();
 
+        auctionType.click();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+        auctionPlatform.click();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
         stepOneButton.click();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
@@ -208,7 +218,6 @@ public class ProductPage {
         driver.switchTo().frame(auctionDetails);
         ((JavascriptExecutor) driver).executeScript("document.querySelector('body').innerHTML = '<div>Auction Title: Luxurious Black Abaya - Perfect for Special Occasions!</div><p>Description: This stunning black Abaya is made from high-quality fabric and features. Bid now and make a statement</p>';");
 
-
         // Switch back to the parent frame
         driver.switchTo().parentFrame();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -240,10 +249,7 @@ public class ProductPage {
         robot.delay(1000); // Wait for the file dialog to catch up
         robot.keyPress(KeyEvent.VK_ENTER);
         robot.keyRelease(KeyEvent.VK_ENTER);
-
-        /**dismiss the pop up that appears after uploading the mainImage successfully**/
-//        WebDriverWait waitFour = new WebDriverWait(driver, 50);
-//        waitFour.until(ExpectedConditions.visibilityOfElementLocated(By.className("btn-secondary"))).click();
+        
         driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 
         // TODO Add the productsImage function should be the same as the mainImageUpload but different webElement
@@ -252,15 +258,14 @@ public class ProductPage {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         // Find the Starting Bid field
-        // Enter the value 500 into the field
         startPriceInput.sendKeys(startPrice);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-        // Enter the value 200 into the field
+        // Enter the estimate value into the field
         bidIncrement.sendKeys(estimatePrice);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-        // Enter the value 700 into the field
+        // Enter the buyNowValue into the field
         buyNowPriceInput.sendKeys(buyNowPrice);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
@@ -280,4 +285,3 @@ public class ProductPage {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 }
-
